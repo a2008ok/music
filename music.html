@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Music</title>
+	<meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta name="author" content="" />
+    <meta name="renderer" content="webkit">
+    <meta content='target-densitydpi=device-dpi, width=640' name='viewport'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">  
+	<link rel="stylesheet" type="text/css" href="css/music.css">
+	<script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
+	<script src=".\js\av-min.js"></script>
+    <script src=".\js\initLeanCloud.js"></script>
+    <script>
+        /*不同分辨率手机加载*/
+        var userScalable = "no";
+        var ins = "";
+        (function () {
+            if (window.devicePixelRatio === 1.5) {
+                userScalable = "yes";
+                ins = "initial-scale=0.5"
+            }
+            var text = "<meta content='" + ins + ", target-densitydpi=device-dpi, width=640,user-scalable=" + userScalable + "' name='viewport'>";
+            document.write(text);
+        })();
+    </script>
+</head>
+
+
+
+<body>
+
+    <div id="index" class="w640">  
+        <div id="h1">
+            <header>
+                <div class="title">
+                </div>
+            </header>
+
+        </div>
+
+        <div id="loading">
+            <span id="loading_bar1"><img src='./images/loading_bar1.png'></span>
+            <span id="loading_bar2" style="display:none;"><img src='./images/loading_bar2.png'></span>
+            <span id="loading_bar3" style="display:none;"><img src='./images/loading_bar2.png'></span>
+            <span id="loading_bar4" style="display:none;"><img src='./images/loading_bar2.png'></span>
+        </div>
+
+        <div class="start_page" style="display:none;">
+            <form id="Input">
+                <div class="row" >
+                    <span style="background:url('./images/input1.png')no-repeat;margin:auto;">
+                    <input id="name" type="text" name="name">
+                    </span>
+                </div>
+                </br>
+                <div class="row">
+                    <span style="background:url('./images/input2.png')no-repeat;margin:auto;">
+                    <input id="studentnumber" type="text" name="name" style="">
+                    </span>
+                </div>
+            </form>
+            </br>
+            </br>
+            <div class="btn_start"><a id="b1" href="javascript:void(0);"></a></div>
+            </br>
+            </br>
+            <div class="btn_ranking1"><a id="b3" href="javascript:void(0);"></a></div>
+        </div>
+    </div>
+
+    <div id="game" >
+        <div id="border">
+	        <div id="div1"><div class="line"></div><div class="button" id="button1"><strong></strong></div></div>
+	        <div id="div2"><div class="line"></div><div class="button" id="button2"><strong></strong></div></div>
+	        <div id="div3"><div class="line"></div><div class="button" id="button3"><strong></strong></div></div>
+	        <div id="div4"><div class="line"></div><div class="button" id="button4"><strong></strong></div></div>
+	        <div id="score"></div>
+	        <div id="pause_button"></div>
+	        <div id="bgmvideo"></div>
+        </div>
+    </div>
+
+    <div id="score1" class="w640" style="display:none;">
+        <header>
+            <div class="title">
+            </div>
+        </header>
+        <div class="end_page">
+            <span>
+                <img src='./images/score.png'>
+                <p id="fenshu">0</p>
+            </span>
+            
+        </div>
+        </br>
+        </br>
+        <div class="btn_again"><a id="b2" href="javascript:void(0);"></a></div>
+        </br>
+        </br>
+        <div class="btn_ranking2"><a id="b3" href="javascript:void(0);"></a></div>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>   
+    <script type="text/javascript" src = "js/music.js"></script>
+    <script>
+    $('#game').hide();
+    </script>
+
+</body>
+
+</html>
