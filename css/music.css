@@ -1,0 +1,294 @@
+#game
+{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-image:url('../game_picture/game_background.png');
+  background-size: 100% 100%;
+}
+
+#border
+{
+   /*width: 520px;*/
+   width: 90%;
+   height:90%;
+   position:absolute;
+   left:5%;
+   top:0%;
+  /*  transform:skew(20deg);      
+    -o-transform:skew(20deg);   
+    -webkit-transform:skew(20deg);
+    -moz-transform:skew(20deg);  */
+  background-image:url('../game_picture/line.png');
+  background-size: 100% 100%;
+}   
+
+#div1
+{
+	width:22.68%;
+	height:100%;
+	position: absolute;
+	left:0%;
+}
+
+
+#div2
+{
+	width:22.68%;
+	height:100%;
+	position: absolute;
+	left:25.77%;
+}
+
+#div3
+{
+	width:22.68%;
+	height:100%;
+	position: absolute;
+	right:25.77%;
+}
+
+
+#div4
+{
+	width:22.68%;
+	height:100%;
+	position: absolute;
+	right:0%;
+}
+
+.line
+{
+    width:100%;
+ 	height:92.068%;
+	position: absolute;
+	left:0%;
+	top:0%;
+}
+
+.button
+{
+	width:100%;
+	height:7.932%;
+	position: absolute;
+	left: 0%;
+	bottom:0%;
+	opacity: 0.5;
+	z-index: 2;
+	text-align: center;
+	font-size: 60px;
+	cursor: pointer;
+	background-image:url('../game_picture/button.png');
+	background-size: 100% 100%;
+}
+/*
+
+
+#myCanvas2
+{
+	width:300px;
+	height: 150px;
+	position: absolute;
+	top: 470px;
+	left: 10px;
+}
+*/
+
+/*
+#myCanvas1
+{
+	widt h:30%;
+	height:15%;
+	position: absolute;
+	top:84%;
+	left:10%;
+}
+
+#myCanvas2
+{
+	width:30%;
+	height:15%;
+	position: absolute;
+	top:84%;
+	left:60%;
+}*/
+
+#score
+{
+	height: 7.7%;
+	width:  35%;
+	z-index: 2;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+    background-image:url('../game_picture/score.png');
+    background-size: 100% 100%;
+    color: #009999;
+    text-align: center;
+}
+
+
+#pause_button
+{
+	height: 7.7%;
+	width:  15%;
+	z-index: 2;
+	position: absolute;
+	top: 5%;
+	right:2%;
+    background-image:url('../game_picture/pause.png');
+    background-size: 100% 100%;
+    text-align: center;
+}
+
+
+@charset "utf-8";
+/*globe*/
+/***************** reset *****************/
+
+body {
+	font:16px/1 "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53";
+	-webkit-text-size-adjust:none;
+	margin:0 auto;
+}
+
+a:hover { /*color:#0064ab; */
+	text-decoration:none;
+}
+
+.clear{ 
+	clear:both;
+	}
+/*main*/
+.w640{
+	width:640px; 
+	margin: 0 auto;
+	background:url("../images/index_bg.png")/*tpa=images/index_bg.png*/ no-repeat; 
+	height:1135px; position:relative;
+	background-size:100%;
+}
+
+header .title{ 
+	padding-top:20%;
+}
+
+#loading_bar1{
+	position:absolute;
+	top:40%;
+	left:12.5%;
+}
+
+#loading_bar2{
+	position:absolute;
+	top:42.2%;
+	left:16.3%;
+}
+
+#loading_bar3{
+	position:absolute;
+	top:42.2%;
+	left:34%;
+}
+
+#loading_bar4{
+	position:absolute;
+	top:42.2%;
+	left:49.6%;
+}
+
+.end_page { 
+	padding-top:40px;
+	text-align: center;
+	font-size: 250%;
+}
+
+.btn_start a { 
+	background:url("../images/btn_start.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 17%;
+}
+
+.btn_ranking1 a { 
+	background:url("../images/btn_ranking.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;   
+	display:block;
+	margin-left: 17%;
+}
+
+.btn_again a { 
+	background:url("../images/btn_again.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 24%;
+}
+
+.btn_ranking2 a { 
+	background:url("../images/btn_ranking.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 24%;
+}
+
+.start_page { 
+	width:493px; 
+	height:106px; 
+	margin:0 auto; 
+	margin-top:50px;  
+}
+
+#Input{
+	text-align:center;
+	font-size: 35pt;
+}
+
+#studentnumber{
+	margin:auto;
+	padding:10px;
+	padding-left: 100px;
+	font-size:40px;
+	background-color:transparent; 
+	border-style:none none none none;
+	width:220px;
+	height:51px;
+}
+
+#name{
+	margin:auto;
+	padding:10px;
+	padding-left: 100px;
+	font-size:40px;
+	background-color:transparent; 
+	border-style:none none none none;
+	width:220px;
+	height:51px;
+}
+
+#fenshu{
+	position: absolute;
+	width: 300px;
+    top: 31%;
+    left: 25%;
+    font-size: 60px;
+    color: #9ab2b2;
+}
