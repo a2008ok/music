@@ -1,0 +1,152 @@
+﻿@charset "utf-8";
+/*globe*/
+/***************** reset *****************/
+
+body {
+	font:16px/1 "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53";
+	-webkit-text-size-adjust:none;
+	margin:0 auto;
+}
+
+a:hover { /*color:#0064ab; */
+	text-decoration:none;
+}
+
+.clear{ 
+	clear:both;
+	}
+/*main*/
+.w640{
+	width:640px; 
+	margin: 0 auto;
+	background:url("../images/index_bg.png")/*tpa=images/index_bg.png*/ no-repeat; 
+	height:1135px; position:relative;
+	background-size:100%;
+}
+
+header .title{ 
+	padding-top:20%;
+}
+
+#loading_bar1{
+	position:absolute;
+	top:40%;
+	left:12.5%;
+}
+
+#loading_bar2{
+	position:absolute;
+	top:42.2%;
+	left:16.3%;
+}
+
+#loading_bar3{
+	position:absolute;
+	top:42.2%;
+	left:34%;
+}
+
+#loading_bar4{
+	position:absolute;
+	top:42.2%;
+	left:49.6%;
+}
+
+.end_page { 
+	padding-top:40px;
+	text-align: center;
+	font-size: 250%;
+}
+
+.btn_start a { 
+	background:url("../images/btn_start.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 17%;
+}
+
+.btn_ranking1 a { 
+	background:url("../images/btn_ranking.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;   
+	display:block;
+	margin-left: 17%;
+}
+
+.btn_again a { 
+	background:url("../images/btn_again.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 24%;
+}
+
+.btn_ranking2 a { 
+	background:url("../images/btn_ranking.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 24%;
+}
+
+.start_page { 
+	width:493px; 
+	height:106px; 
+	margin:0 auto; 
+	margin-top:50px;  
+}
+
+#Input{
+	text-align:center;
+	font-size: 35pt;
+}
+
+#studentnumber{
+	margin:auto;
+	padding:10px;
+	padding-left: 100px;
+	font-size:40px;
+	background-color:transparent; 
+	border-style:none none none none;
+	width:220px;
+	height:51px;
+}
+
+#name{
+	margin:auto;
+	padding:10px;
+	padding-left: 100px;
+	font-size:40px;
+	background-color:transparent; 
+	border-style:none none none none;
+	width:220px;
+	height:51px;
+}
+
+#fenshu{
+	position: absolute;
+	width: 300px;
+    top: 36.5%;
+    left: 25%;
+    font-size: 60px;
+    color: #9ab2b2;
+}
+
+
