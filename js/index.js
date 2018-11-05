@@ -36,6 +36,12 @@ $(function () {
         setTimeout('game();', 1500);              
     });
 
+       $("#b3").click(function () {
+        var audio= document.getElementById("audio");
+        audio.play();        
+    });
+ 
+    
     $("#b12").click(function () {
 
 
