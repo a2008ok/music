@@ -110,7 +110,7 @@ function game(){
             }
             position[num-1]=0;
             var myline=$('#button'+number);
-            if(number==1)
+            if(number==1){
                 myline.after('<div class="target" data-acton="'+number+'" id="target'+num+'" ></div>');
             }
             else if(number==2){
