@@ -36,12 +36,14 @@ $(function () {
         setTimeout('game();', 1500);              
     });
 
-       $("#b3").click(function () {
+    $("#b3").click(function () {
+                    setTimeout('$("#index").fadeOut(1);', 1);
+            setTimeout('$("#game").fadeIn(1);', 1);   
         var audio= document.getElementById("audio");
         audio.play();
+        setTimeout('game();', 3);           
     });
- 
-    
+
     $("#b12").click(function () {
 
 
@@ -69,6 +71,3 @@ $(function () {
         });
     });
 });
-
-
-
