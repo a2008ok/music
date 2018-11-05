@@ -38,7 +38,7 @@ $(function () {
 
        $("#b3").click(function () {
         var audio= document.getElementById("audio");
-        audio.play();        
+        setTimeout('audio.play();', 1500);    
     });
  
     
