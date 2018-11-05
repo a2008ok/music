@@ -435,7 +435,6 @@ musicinit:function()
 {
 	$(document).ready(function () {           
 	 
-	 	$("#bgmvideo").append( '<audio src="school_song/school_song.mp3"  hidden id="audio"></audio>');
     audio= document.getElementById("audio");
 	                            })
 
