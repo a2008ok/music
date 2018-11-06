@@ -34,8 +34,7 @@ $(function () {
             setTimeout('$("#index").fadeOut(100);', 100);
             setTimeout('$("#shuoming").fadeIn(1000);', 100); 
             var audio= document.getElementById("audio");
-            audio.play();   
-            setTimeout('audio.pause();', 1);        
+   
         };              
     });
 
