@@ -18,7 +18,7 @@ function game(){
     var line3target=new Array(50);
     var line4target=new Array(50);
     var position=new Array(200);
-    var crack_array=new Array(400);
+    var crack_array=new Array(200);
     var line1firstindex=1;
     var line1lastindex=0;
     var line2firstindex=1;
@@ -37,9 +37,10 @@ function game(){
     var line3colorstatus=0;
     var line4colorstatus=0;
     var gamestatus=0;
-    var perfectdistance=ButtonLength/3;
+    var perfectdistance=ButtonLength/4;
+    var gooddistance=ButtonLength/2;
     var distance;
-    var audio;
+    var audio= document.getElementById("audio");
     var looptimes=0;
     //var flag=1;
     var scorechangeflag=0;
@@ -314,6 +315,13 @@ function game(){
                 this.colorprocess(1,1);
                 scorechangeflag=1;
             }
+            else if(line1status==2) {
+                score+=3;
+                gamestatus=1;
+                line1status=0;
+                this.colorprocess(1,1);
+                scorechangeflag=1;
+            }
             else {
                 gamestatus=0;
                 this.colorprocess(1,0)
@@ -327,6 +335,12 @@ function game(){
             }
             else if(line2status==1) {
                 score+=5;gamestatus=1;
+                line2status=0;
+                this.colorprocess(2,1);
+                scorechangeflag=1;
+            }
+            else if(line2status==2) {
+                score+=3;gamestatus=1;
                 line2status=0;
                 this.colorprocess(2,1);
                 scorechangeflag=1;
@@ -348,6 +362,13 @@ function game(){
               this.colorprocess(3,1);
               scorechangeflag=1;
             }
+            else if(line3status==2) {
+              score+=3;
+              gamestatus=1;
+              line3status=0;
+              this.colorprocess(3,1);
+              scorechangeflag=1;
+            }
             else {
                 gamestatus=0;
                 this.colorprocess(3,0);
@@ -361,6 +382,13 @@ function game(){
             }
             else if(line4status==1) {
                 score+=5;
+                gamestatus=-1;
+                line4status=0;
+                this.colorprocess(4,1);
+                scorechangeflag=1;
+            }
+            else if(line4status==2) {
+                score+=3;
                 gamestatus=-1;
                 line4status=0;
                 this.colorprocess(4,1);
@@ -434,7 +462,7 @@ function game(){
             //dtx.clearRect(150,60,150,50);
             //print
             //dtx.strokeText(score,150,100);
-                $('#score').css('font-size',font_size+'px').text(score);
+              $('#score').css('font-size',font_size+'px').text(score);
             }
             scorechangeflag=0;
             /*if(timeschangeflag==1){
@@ -444,7 +472,7 @@ function game(){
                 dtx.strokeText(times,150,100);
             }
             timeschangeflag=0;*/
-            /*if(timeschangeflag==1){
+           /* if(timeschangeflag==1){
                 $('#score').css('font-size',font_size+'px').text(times/2);
                 timeschangeflag=0;
             }*/
@@ -456,12 +484,9 @@ function game(){
                     distance=Math.abs(position[line1target[line1firstindex-1]-1]-LineLength);
 	                  if(distance<=perfectdistance) {
                         line1status=1;
+                        $('#target' + line1target[line1firstindex-1]).remove();
+                        line1firstindex++;
                     }
-                    else {
-                        line1status=-1;
-                    }
-                    $('#target' + line1target[line1firstindex-1]).remove();
- 		                line1firstindex++;
                 }
             });
 
@@ -469,13 +494,15 @@ function game(){
                 if(line2lastindex>=line2firstindex){
                     distance=Math.abs(position[line2target[line2firstindex-1]-1]-LineLength);
 	                  if(distance<=perfectdistance) {
-                       line2status=1;
+                        line2status=1;
+                        $('#target' + line2target[line2firstindex-1]).remove();
+                        line2firstindex++;
                     }
-                    else {
-                        line2status=-1;
-                    }
-                    $('#target' + line2target[line2firstindex-1]).remove();
- 		                line2firstindex++;
+                      else if(distance<=gooddistance) {
+                        line2status=2;
+                        $('#target' + line2target[line2firstindex-1]).remove();
+                        line2firstindex++;
+                    }                  
                 }
             });
 
@@ -484,12 +511,14 @@ function game(){
                     distance=Math.abs(position[line3target[line3firstindex-1]-1]-(LineLength+height/5));
 	                  if(distance<=perfectdistance) {
                         line3status=1;
+                        $('#target' + line3target[line3firstindex-1]).remove();
+                        line3firstindex++;
                     }
-                    else {
-                        line3status=-1;
+                      else if(distance<=gooddistance) {
+                        line3status=2;
+                        $('#target' + line3target[line3firstindex-1]).remove();
+                        line3firstindex++;
                     }
-                    $('#target' + line3target[line3firstindex-1]).remove();
- 		                line3firstindex++;
                 }
             });
 
@@ -498,12 +527,14 @@ function game(){
                     distance=Math.abs(position[line4target[line4firstindex-1]-1]-LineLength);
 	                  if(distance<=perfectdistance) {
                         line4status=1;
+                        $('#target' + line4target[line4firstindex-1]).remove();
+                        line4firstindex++;
                     }
-                    else {
-                        line4status=-1;
+                      else if(distance<=gooddistance) {
+                        line4status=2;
+                        $('#target' + line4target[line4firstindex-1]).remove();
+                        line4firstindex++;
                     }
-                    $('#target' + line4target[line4firstindex-1]).remove();
- 		                line4firstindex++;
                 }
             });
 
@@ -556,34 +587,47 @@ function game(){
         init:function(){
 	          //this.canvasinit();
 	          this.buttoninit();
-	          this.musicinit();
+	          //this.musicinit();
             $('#score').css('font-size',font_size+'px').text(score);
             this.crack_array_init();
         },
 
         crack_array_init:function(){
-            for(i=0;i<300;i++){
+            for(i=0;i<200;i++){
                 crack_array[i]=0;
             }
-            for(i=1;i<60;i+=2){
+            for(i=32;i<148;i+=1){
                 crack_array[i]=1;
             }
-            for(i=60;i<115;i+=2){
-                crack_array[i]=1;
-            }
-            crack_array[125]=1;
-            crack_array[133]=1;
-            crack_array[143]=1;
-            crack_array[150]=1;
-            crack_array[160]=1;
-            crack_array[168]=1;
-            crack_array[177]=1;
-            crack_array[191]=1;
-            crack_array[195]=1;
-            for(i=204;i<219;i+=2){
-                crack_array[i]=1;
-            }
-            score=0;
+            crack_array[35]=0;
+            crack_array[41]=0;
+            crack_array[45]=0;
+            crack_array[51]=0;
+            crack_array[55]=0;
+            crack_array[61]=0;
+            crack_array[65]=0;
+            crack_array[71]=0;
+            crack_array[76]=0;
+            crack_array[78]=0;
+            crack_array[86]=0;
+            crack_array[88]=0;
+            crack_array[96]=0;
+            crack_array[98]=0;
+            crack_array[100]=0;
+            crack_array[103]=0;
+            crack_array[104]=0;
+            crack_array[105]=0;
+            crack_array[106]=0;
+            crack_array[110]=0;
+            crack_array[116]=0;
+            crack_array[120]=0;
+            crack_array[126]=0;
+            crack_array[127]=0;
+            crack_array[136]=0;
+            crack_array[140]=0;
+            crack_array[143]=0;
+            crack_array[145]=0;
+
         }
             
     }
@@ -647,5 +691,7 @@ function game_out(){
     setTimeout('$("#game").fadeOut(100);', 100);
     setTimeout('$("#score1").fadeIn(1000);', 100);  
 }
+
+
 
 
