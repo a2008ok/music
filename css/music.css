@@ -228,7 +228,7 @@ header .title{
 	font-size:30px; 
 	color:#fff;  
 	display:block;
-	margin-left: 17%;
+	margin-left: 17.5%;
 }
 
 .btn_ranking1 a { 
@@ -312,9 +312,10 @@ header .title{
 
 #shuoming{
 	position: absolute;
-	width: 300px;
-    top: 14%;
-    left: 25%;
+	width: 510px;
+    top: 4%;
+    left: 11%;
     font-size: 60px;
     color: #9ab2b2;
+    z-index: 10;
 }
