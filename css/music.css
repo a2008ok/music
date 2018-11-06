@@ -115,7 +115,7 @@
 
 #score
 {
-	height: 7.7%;
+	height: 80px;
 	width:  35%;
 	z-index: 2;
 	position: absolute;
@@ -125,6 +125,7 @@
     background-size: 100% 100%;
     color: #009999;
     text-align: center;
+    line-height: 80px;
 }
 
 
@@ -194,6 +195,10 @@ header .title{
 	position:absolute;
 	top:42.2%;
 	left:49.6%;
+}
+
+.title { 
+	text-align: center;
 }
 
 .end_page { 
