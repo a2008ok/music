@@ -32,27 +32,23 @@ $(function () {
         }
         else{
             setTimeout('$("#index").fadeOut(100);', 100);
-            setTimeout('$("#shuoming").fadeIn(1000);', 100); 
+            setTimeout('$("#game").fadeIn(1000);', 100);
+            setTimeout('$("#shuoming").fadeIn(1000);', 100);
             var audio= document.getElementById("audio");
-            audio.play();   
-            setTimeout('audio.pause();', 1);     
+            audio.play();
+            setTimeout('audio.pause();', 3);         
         };              
     });
 
     $("#b2").click(function () {
         setTimeout('$("#shuoming").fadeOut(1);', 1); 
-        setTimeout('$("#game").fadeIn(1);', 1); 
         var audio= document.getElementById("audio");
         audio.play();
-        setTimeout('game();', 3);         
+        setTimeout('game();', 1);   
     });
 
     $("#b3").click(function () {
-                    setTimeout('$("#index").fadeOut(1);', 1);
-            setTimeout('$("#game").fadeIn(1);', 1);   
-        var audio= document.getElementById("audio");
-        audio.play();
-        setTimeout('game();', 3);           
+        window.location.reload();          
     });
 
     $("#b12").click(function () {
@@ -63,23 +59,30 @@ $(function () {
         var studentnumber=document.getElementById("studentnumber").value;
         var Scores = AV.Object.extend("score");
         var formObject = new Scores();
+        var abc;
         formObject.save({
-            score:sc,
             check:1,
             name:name,
             studentnumber:studentnumber,
+            score:score,
         }, {
             success: function(object) {
                 alert("success！");
             }
         });    
         var query = new AV.Query('score');
-        query.equalTo('check', 1);
-        query.count().then(function (count) {
-            var StatA = document.getElementById("paiming")
-            StatA.innerHTML = count;
+        query.equalTo('studentnumber', studentnumber);
+        query.count().then(function (count) { 
+            abc = count;
         }, function (error) {
         });
+        if(abc=1){
+            query.equalTo('studentnumber', studentnumber);
+            query.find().then(function (results) { 
+                abc = count;
+            }, function (error) {
+            });
+        }
     });
 });
 
