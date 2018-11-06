@@ -219,6 +219,18 @@ header .title{
 	margin-left: 17%;
 }
 
+.btn_ok a { 
+	background:url("../images/btn_ok.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 17%;
+}
+
 .btn_ranking1 a { 
 	background:url("../images/btn_ranking.png") no-repeat; 
 	width:323px; 
@@ -293,6 +305,15 @@ header .title{
 	position: absolute;
 	width: 300px;
     top: 31%;
+    left: 25%;
+    font-size: 60px;
+    color: #9ab2b2;
+}
+
+#shuoming{
+	position: absolute;
+	width: 300px;
+    top: 14%;
     left: 25%;
     font-size: 60px;
     color: #9ab2b2;
