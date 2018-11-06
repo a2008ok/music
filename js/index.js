@@ -4,6 +4,7 @@ $(function () {
     setTimeout('$("#loading_bar3").show();', 1000);
     setTimeout('$("#loading_bar4").show();', 2500);
     setTimeout('$("#loading").fadeOut(1000);', 2700);
+    setTimeout('$(".title").fadeIn(1000);', 3500);
     setTimeout('$(".start_page").fadeIn(1000);', 3500);
 
     function isStuNum(v){
@@ -31,9 +32,9 @@ $(function () {
         }
         else{
             setTimeout('$("#index").fadeOut(100);', 100);
-            setTimeout('$("#game").fadeIn(1000);', 100);               
-        };
-        setTimeout('game();', 1500);              
+            setTimeout('$("#game").fadeIn(1000);', 100); 
+            setTimeout('game();', 1500);              
+        };              
     });
 
     $("#b3").click(function () {
@@ -71,3 +72,6 @@ $(function () {
         });
     });
 });
+
+
+
