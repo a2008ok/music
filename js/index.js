@@ -32,9 +32,19 @@ $(function () {
         }
         else{
             setTimeout('$("#index").fadeOut(100);', 100);
-            setTimeout('$("#game").fadeIn(1000);', 100); 
-            setTimeout('game();', 1500);              
+            setTimeout('$("#shuoming").fadeIn(1000);', 100); 
+            var audio= document.getElementById("audio");
+            audio.play();   
+            setTimeout('audio.pause();', 1);        
         };              
+    });
+
+    $("#b2").click(function () {
+        setTimeout('$("#shuoming").fadeOut(1);', 1); 
+        setTimeout('$("#game").fadeIn(1);', 1); 
+        var audio= document.getElementById("audio");
+        audio.play();
+        setTimeout('game();', 3);         
     });
 
     $("#b3").click(function () {
