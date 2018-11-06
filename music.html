@@ -11,11 +11,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="format-detection" content="telephone=no">  
-    <link rel="stylesheet" type="text/css" href="css/music.css">
-    <script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
-    <script src=".\js\av-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/music.css">
+	<script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
+	<script src=".\js\av-min.js"></script>
     <script src=".\js\initLeanCloud.js"></script>
-    <script type="text/javascript" src = "js/music.js"></script>
     <script>
         /*不同分辨率手机加载*/
         var userScalable = "no";
@@ -42,14 +41,14 @@
             <span id="loading_bar3" style="display:none;"><img src='./images/loading_bar2.png'></span>
             <span id="loading_bar4" style="display:none;"><img src='./images/loading_bar2.png'></span>
         </div>
-	    
-	<div id="h1">
+
+        <div id="h1">
             <header>
                 <div class="title" style="display:none;">
                     <img src='./images/title.png'>
                 </div>
             </header>
-        </div>
+        </div> 
 
         <div class="start_page" style="display:none;">
             <form id="Input">
@@ -67,10 +66,9 @@
             </form>
             </br>
             </br>
+            </br>
             <div class="btn_start"><a id="b1" href="javascript:void(0);"></a></div>
-            </br>
-            </br>
-            <div class="btn_ranking1"><a id="b3" href="javascript:void(0);"></a></div>
+
         </div>
     </div>
 
@@ -79,7 +77,7 @@
         <div class="btn_ok"><a id="b2" href="javascript:void(0);"></a></div>
     </div>
 
-    <div id="game" >
+    <div id="game" style="display:none;">
         <div id="border">
 	        <div id="div1"><div class="line"></div><div class="button" id="button1"><strong></strong></div></div>
 	        <div id="div2"><div class="line"></div><div class="button" id="button2"><strong></strong></div></div>
@@ -107,16 +105,11 @@
         </div>
         </br>
         </br>
-        <div class="btn_again"><a id="b2" href="javascript:void(0);"></a></div>
-        </br>
-        </br>
-        <div class="btn_ranking2"><a id="b3" href="javascript:void(0);"></a></div>
+        <div class="btn_again"><a id="b3" href="javascript:void(0);"></a></div>
     </div>
 
     <script type="text/javascript" src="js/index.js"></script>   
-    <script>
-    $('#game').hide();
-    </script>
+    <script type="text/javascript" src = "js/music.js"></script>
 
 </body>
 
