@@ -353,8 +353,8 @@ header .title{
 #own{
 	position: absolute;
 	top: 58.8%;
-	left: 13%;
-	width:184px;
+	left: 10%;
+	width:238px;
 	height:60px;
 	margin:auto;
     text-align: center;
@@ -365,8 +365,8 @@ header .title{
 #ownranking{
 	position: absolute;
 	top: 58.7%;
-	left: 53%;
-	width:158px;
+	left: 52%;
+	width:180px;
 	height:66px;
 	margin:auto;
     text-align: center;
@@ -374,10 +374,12 @@ header .title{
 }
 
 .mingci{
-	font-size: 38px;
+	font-size: 44px;
 	color: #687a7a;
+	margin: 2px;
 }
 
 .gaofen{
-	font-size: 38px;
+	font-size: 41px;
+	margin: 23px;
 }
