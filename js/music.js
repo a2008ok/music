@@ -601,7 +601,7 @@ function game(){
             for(i=0;i<200;i++){
                 crack_array[i]=0;
             }
-            for(i=30;i<146;i+=1){
+            for(i=30;i<142;i+=1){
                 crack_array[i]=1;
             }
             crack_array[5]=1;
@@ -612,30 +612,26 @@ function game(){
             crack_array[39]=0;
             crack_array[43]=0;
             crack_array[49]=0;
-            crack_array[53]=0;
-            crack_array[59]=0;
-            crack_array[63]=0;
-            crack_array[69]=0;
-            crack_array[74]=0;
-            crack_array[76]=0;
+            crack_array[58]=0;
+            crack_array[62]=0;
+            crack_array[68]=0;
+            crack_array[73]=0;
+            crack_array[82]=0;
             crack_array[84]=0;
-            crack_array[86]=0;
+            crack_array[92]=0;
             crack_array[94]=0;
             crack_array[96]=0;
-            crack_array[98]=0;
+            crack_array[99]=0;
+            crack_array[100]=0;
             crack_array[101]=0;
             crack_array[102]=0;
-            crack_array[103]=0;
-            crack_array[104]=0;
-            crack_array[108]=0;
-            crack_array[114]=0;
-            crack_array[118]=0;
-            crack_array[124]=0;
-            crack_array[125]=0;
+            crack_array[111]=0;
+            crack_array[115]=0;
+            crack_array[121]=0;
+            crack_array[130]=0;
             crack_array[134]=0;
-            crack_array[138]=0;
-            crack_array[141]=0;
-            crack_array[143]=0;
+            crack_array[137]=0;
+            crack_array[139]=0;
              }
             else
             {
