@@ -59,6 +59,7 @@ function game(){
     var play_flag=1;
     var dis;
     var toppx=11*height/10;
+    var listenflag=1;
 
     /*
     //canvas init
@@ -658,10 +659,15 @@ function game(){
             Wrapper.move();
             Wrapper.gamecheck();
             //if(times==188){clearInterval(timer);}
-            audio.addEventListener('ended', function () {  
-                clearInterval(timer);
-                game_out();
-            }, false);
+            function myfunction()
+            {
+                if (listenflag) {
+                    clearInterval(timer);
+                    game_out();
+                    listenflag=0;
+                }
+            }
+            audio.addEventListener('ended', myfunction, false);
         }
         else{
             if(pause_flag){
@@ -672,7 +678,8 @@ function game(){
         }
 
     },circletimes);
-
+    
+audio.removeEventListener('ended', myfunction);
 }
 
 
@@ -690,8 +697,19 @@ function game_out(){
     fenshu.innerHTML = score;
     setTimeout('$("#game").fadeOut(100);', 100);
     setTimeout('$("#score1").fadeIn(1000);', 100);  
+    var Scores = AV.Object.extend("score");
+    var formObject = new Scores();
+    var abc;
+    formObject.save({
+        check:1,
+        name:name,
+        studentnumber:studentnumber,
+        score:score,
+    }, {
+        success: function(object) {
+            alert("success！");
+        }
+    }); 
 }
-
-
 
 
