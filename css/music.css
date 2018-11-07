@@ -220,6 +220,24 @@ header .title{
 }
 
 .btn_ok a { 
+	position: absolute;
+	top: 101%;
+	left: -0.5%;
+	background:url("../images/btn_ok.png") no-repeat; 
+	width:323px; 
+	height:113px; 
+	margin-bottom:8px; 
+	line-height:96px; 
+	font-size:30px; 
+	color:#fff;  
+	display:block;
+	margin-left: 17.5%;
+}
+
+.btn_ok2 a { 
+	position: absolute;
+	top: 75%;
+	left: 8%;
 	background:url("../images/btn_ok.png") no-repeat; 
 	width:323px; 
 	height:113px; 
@@ -318,4 +336,48 @@ header .title{
     font-size: 60px;
     color: #9ab2b2;
     z-index: 10;
+}
+
+#paihang{
+	position: absolute;
+	top: 3%;
+	left: 11%;
+	background:url("../images/ranking.png") no-repeat;
+	width:505px;
+	height:919px;
+	margin:auto;
+	padding-top: 37%;
+    text-align: center;
+}
+
+#own{
+	position: absolute;
+	top: 58.8%;
+	left: 13%;
+	width:184px;
+	height:60px;
+	margin:auto;
+    text-align: center;
+    font-size: 45px;
+    color: #687a7a;
+}
+
+#ownranking{
+	position: absolute;
+	top: 58.7%;
+	left: 53%;
+	width:158px;
+	height:66px;
+	margin:auto;
+    text-align: center;
+    font-size: 54px;
+}
+
+.mingci{
+	font-size: 38px;
+	color: #687a7a;
+}
+
+.gaofen{
+	font-size: 38px;
 }
