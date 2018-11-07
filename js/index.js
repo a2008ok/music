@@ -81,6 +81,16 @@ $(function () {
             gaofen3.innerHTML = no3.get('score');
         }, function (error) {
         });
+        //拉取当前玩家排名
+        var query3 = new AV.Query('score');
+        query3.greaterThan('score', realscore);
+        query3.count().then(function (count){
+            var abcde = count + 1;
+            var ownranking1 = document.getElementById("ownranking");
+            ownranking1.innerHTML = abcde;
+        },function (error){
+        });
+
     });   
 
     $("#b5").click(function () {
@@ -163,3 +173,6 @@ $(function () {
 
     });   
 });
+
+
+
