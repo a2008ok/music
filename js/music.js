@@ -1,5 +1,6 @@
 var score=0;
-
+var u = navigator.userAgent;
+var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 function game(){
 
     //data init
@@ -140,7 +141,7 @@ function game(){
             });
         },
 
-	      //randoms函数实现随机产生一块方块
+          //randoms函数实现随机产生一块方块
         randoms:function(){
             num++;
             var number=(1 + Math.random() * (4 - 1)).toFixed(0);
@@ -172,7 +173,7 @@ function game(){
             }
             var target=$('#target'+num);
             target.css({
-	              'position':'absolute',
+                  'position':'absolute',
                 'left':leftsize+'px',
                 'top':-toppx+'px',
                 'width':width+'px',
@@ -189,48 +190,48 @@ function game(){
         line1check:function(){
             if(line1lastindex>=line1firstindex){
                 if(position[line1target[line1firstindex-1]-1]>heightjudge){
- 		                $('#target' + line1target[line1firstindex-1]).remove();
- 		                line1status=-1;
- 		                line1firstindex++;
- 	              }
+                        $('#target' + line1target[line1firstindex-1]).remove();
+                        line1status=-1;
+                        line1firstindex++;
+                  }
             }
         },
 
         line2check:function(){
             if(line2lastindex>=line2firstindex){
                 if(position[line2target[line2firstindex-1]-1]>heightjudge){
- 		                $('#target' + line2target[line2firstindex-1]).remove();
- 		                line2status=-1;
- 		                line2firstindex++;
- 	              }
+                        $('#target' + line2target[line2firstindex-1]).remove();
+                        line2status=-1;
+                        line2firstindex++;
+                  }
             }
         },
 
         line3check:function(){
             if(line3lastindex>=line3firstindex){
                 if(position[line3target[line3firstindex-1]-1]>heightjudge){
- 		                $('#target' + line3target[line3firstindex-1]).remove();
- 		                line3status=-1;
- 		                line3firstindex++;
- 	              }
+                        $('#target' + line3target[line3firstindex-1]).remove();
+                        line3status=-1;
+                        line3firstindex++;
+                  }
             }
         },
 
         line4check:function(){
             if(line4lastindex>=line4firstindex){
                 if(position[line4target[line4firstindex-1]-1]>heightjudge){
- 		                $('#target' + line4target[line4firstindex-1]).remove();
- 		                line4status=-1;
- 		                line4firstindex++;
- 	              }
+                        $('#target' + line4target[line4firstindex-1]).remove();
+                        line4status=-1;
+                        line4firstindex++;
+                  }
             }
         },
 
         move:function(){
-		    	  for(var i=line1firstindex;i<=line1lastindex;i++){
-		    		    position[line1target[i-1]-1]+=speed;
+                  for(var i=line1firstindex;i<=line1lastindex;i++){
+                        position[line1target[i-1]-1]+=speed;
                 dis=position[line1target[i-1]-1];
-		    		    $('#target'+line1target[i-1]).css({
+                        $('#target'+line1target[i-1]).css({
                     'top':dis-toppx+'px', 
                 });
                 if(dis>heightjudge){
@@ -238,7 +239,7 @@ function game(){
                     line1status=-1;
                     line1firstindex++;
                 }
-		    	  }
+                  }
 
             for(var i=line2firstindex;i<=line2lastindex;i++){
                 position[line2target[i-1]-1]+=speed;
@@ -280,11 +281,11 @@ function game(){
             }
 
             /*var moveNum=Wrapper.randoms();
-			      var idNum=num;
-			      var y=0;
+                  var idNum=num;
+                  var y=0;
             var time=setInterval (function(){
                 y+=speed;$('#target'+idNum).css({'top':y+'px', });
-            	  if(y>heightjudge){
+                  if(y>heightjudge){
                     var shortT=setTimeout(function(){
                         $('#target' + idNum).remove();
                         clearInterval(time);
@@ -293,7 +294,7 @@ function game(){
                     clearInterval(time);
                 }
                 time=null;
-            },40);*/			
+            },40);*/            
         },     
 
         linecheck:function(){
@@ -428,30 +429,30 @@ function game(){
             }
 
             if(color_status!=0){
-    	          if(line_num==1) {
+                  if(line_num==1) {
                     line1colorstatus=0;
                 }
-    	          else if(line_num==2) {
+                  else if(line_num==2) {
                     line2colorstatus=0;
                 }
-    	          else if(line_num==3) {
+                  else if(line_num==3) {
                     line3colorstatus=0;
                 }
-    	          else {
+                  else {
                     line4colorstatus=0;
                 }
             }
             else{
-    	          if(line_num==1) {
+                  if(line_num==1) {
                     line1colorstatus++;
                 }
-    	          else if(line_num==2) {
+                  else if(line_num==2) {
                     line2colorstatus++;
                 }
-    	          else if(line_num==3) {
+                  else if(line_num==3) {
                     line3colorstatus++;
                 }
-    	          else {
+                  else {
                     line4colorstatus++;
                 }
             }
@@ -483,7 +484,7 @@ function game(){
             $('#button1').click(function(){
                 if(line1lastindex>=line1firstindex){
                     distance=Math.abs(position[line1target[line1firstindex-1]-1]-LineLength);
-	                  if(distance<=perfectdistance) {
+                      if(distance<=perfectdistance) {
                         line1status=1;
                         $('#target' + line1target[line1firstindex-1]).remove();
                         line1firstindex++;
@@ -494,7 +495,7 @@ function game(){
             $('#button2').click(function(){
                 if(line2lastindex>=line2firstindex){
                     distance=Math.abs(position[line2target[line2firstindex-1]-1]-LineLength);
-	                  if(distance<=perfectdistance) {
+                      if(distance<=perfectdistance) {
                         line2status=1;
                         $('#target' + line2target[line2firstindex-1]).remove();
                         line2firstindex++;
@@ -510,7 +511,7 @@ function game(){
             $('#button3').click(function(){
                 if(line3lastindex>=line3firstindex){
                     distance=Math.abs(position[line3target[line3firstindex-1]-1]-(LineLength+height/5));
-	                  if(distance<=perfectdistance) {
+                      if(distance<=perfectdistance) {
                         line3status=1;
                         $('#target' + line3target[line3firstindex-1]).remove();
                         line3firstindex++;
@@ -526,7 +527,7 @@ function game(){
             $('#button4').click(function(){
                 if(line4lastindex>=line4firstindex){
                     distance=Math.abs(position[line4target[line4firstindex-1]-1]-LineLength);
-	                  if(distance<=perfectdistance) {
+                      if(distance<=perfectdistance) {
                         line4status=1;
                         $('#target' + line4target[line4firstindex-1]).remove();
                         line4firstindex++;
@@ -556,9 +557,9 @@ function game(){
         },
 
         musicinit:function(){
-	          $(document).ready(function () {           
+              $(document).ready(function () {           
                 audio= document.getElementById("audio");
-	          })
+              })
         },
 
         pausecheck:function(){
@@ -586,20 +587,70 @@ function game(){
         },
 
         init:function(){
-	          //this.canvasinit();
-	          this.buttoninit();
-	          //this.musicinit();
+              //this.canvasinit();
+              this.buttoninit();
+              score=0;
+              //this.musicinit();
             $('#score').css('font-size',font_size+'px').text(score);
             this.crack_array_init();
         },
 
         crack_array_init:function(){
+            if(isiOS)
+            {
+            for(i=0;i<200;i++){
+                crack_array[i]=0;
+            }
+            for(i=32;i<147;i+=1){
+                crack_array[i]=1;
+            }
+            crack_array[1]=1;
+            crack_array[6]=1;
+            crack_array[11]=1;
+            crack_array[16]=1;
+            crack_array[21]=1;
+            crack_array[34]=0;
+            crack_array[40]=0;
+            crack_array[44]=0;
+            crack_array[50]=0;
+            crack_array[54]=0;
+            crack_array[60]=0;
+            crack_array[64]=0;
+            crack_array[70]=0;
+            crack_array[75]=0;
+            crack_array[77]=0;
+            crack_array[85]=0;
+            crack_array[87]=0;
+            crack_array[95]=0;
+            crack_array[97]=0;
+            crack_array[99]=0;
+            crack_array[102]=0;
+            crack_array[103]=0;
+            crack_array[104]=0;
+            crack_array[105]=0;
+            crack_array[109]=0;
+            crack_array[115]=0;
+            crack_array[119]=0;
+            crack_array[125]=0;
+            crack_array[126]=0;
+            crack_array[135]=0;
+            crack_array[139]=0;
+            crack_array[142]=0;
+            crack_array[144]=0;
+             }
+            else
+            {
             for(i=0;i<200;i++){
                 crack_array[i]=0;
             }
             for(i=32;i<148;i+=1){
                 crack_array[i]=1;
             }
+            crack_array[2]=1;
+            crack_array[7]=1;
+            crack_array[12]=1;
+            crack_array[17]=1;
+            crack_array[22]=1;
             crack_array[35]=0;
             crack_array[41]=0;
             crack_array[45]=0;
@@ -628,7 +679,7 @@ function game(){
             crack_array[140]=0;
             crack_array[143]=0;
             crack_array[145]=0;
-
+             }
         }
             
     }
@@ -696,5 +747,3 @@ function game_out(){
     setTimeout('$("#game").fadeOut(100);', 100);
     setTimeout('$("#score1").fadeIn(1000);', 100);  
 }
-
-
