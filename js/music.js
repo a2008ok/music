@@ -459,14 +459,14 @@ function game(){
         },
 
         scoreprocess:function(){
-            if(scorechangeflag==1){
+            /*if(scorechangeflag==1){*/
             //擦除
             //dtx.clearRect(150,60,150,50);
             //print
             //dtx.strokeText(score,150,100);
-            $('#score').css('font-size',font_size+'px').text(score);
+           /* $('#score').css('font-size',font_size+'px').text(score);
             }
-            scorechangeflag=0;
+            scorechangeflag=0;*/
             /*if(timeschangeflag==1){
             //擦除
                 dtx.clearRect(150,60,150,50);
@@ -474,10 +474,10 @@ function game(){
                 dtx.strokeText(times,150,100);
             }
             timeschangeflag=0;*/
-          /* if(timeschangeflag==1){
+           if(timeschangeflag==1){
                 $('#score').css('font-size',font_size+'px').text(times/2);
                 timeschangeflag=0;
-            }*/
+            }
         },
 
         buttoninit:function(){
