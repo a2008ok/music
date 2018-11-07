@@ -601,42 +601,41 @@ function game(){
             for(i=0;i<200;i++){
                 crack_array[i]=0;
             }
-            for(i=31;i<147;i+=1){
+            for(i=30;i<146;i+=1){
                 crack_array[i]=1;
             }
-            crack_array[1]=1;
-            crack_array[6]=1;
-            crack_array[11]=1;
-            crack_array[16]=1;
-            crack_array[21]=1;
-            crack_array[34]=0;
-            crack_array[40]=0;
-            crack_array[44]=0;
-            crack_array[50]=0;
-            crack_array[54]=0;
-            crack_array[60]=0;
-            crack_array[64]=0;
-            crack_array[70]=0;
-            crack_array[75]=0;
-            crack_array[77]=0;
-            crack_array[85]=0;
-            crack_array[87]=0;
-            crack_array[95]=0;
-            crack_array[97]=0;
-            crack_array[99]=0;
+            crack_array[5]=1;
+            crack_array[10]=1;
+            crack_array[15]=1;
+            crack_array[20]=1;
+            crack_array[33]=0;
+            crack_array[39]=0;
+            crack_array[43]=0;
+            crack_array[49]=0;
+            crack_array[53]=0;
+            crack_array[59]=0;
+            crack_array[63]=0;
+            crack_array[69]=0;
+            crack_array[74]=0;
+            crack_array[76]=0;
+            crack_array[84]=0;
+            crack_array[86]=0;
+            crack_array[94]=0;
+            crack_array[96]=0;
+            crack_array[98]=0;
+            crack_array[101]=0;
             crack_array[102]=0;
             crack_array[103]=0;
             crack_array[104]=0;
-            crack_array[105]=0;
-            crack_array[109]=0;
-            crack_array[115]=0;
-            crack_array[119]=0;
+            crack_array[108]=0;
+            crack_array[114]=0;
+            crack_array[118]=0;
+            crack_array[124]=0;
             crack_array[125]=0;
-            crack_array[126]=0;
-            crack_array[135]=0;
-            crack_array[139]=0;
-            crack_array[142]=0;
-            crack_array[144]=0;
+            crack_array[134]=0;
+            crack_array[138]=0;
+            crack_array[141]=0;
+            crack_array[143]=0;
              }
             else
             {
