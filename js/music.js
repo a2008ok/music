@@ -746,4 +746,42 @@ function game_out(){
     fenshu.innerHTML = score;
     setTimeout('$("#game").fadeOut(100);', 100);
     setTimeout('$("#score1").fadeIn(1000);', 100);  
+
+    //上传分数
+    var ckb;
+    var query1 = new AV.Query('score');
+    query1.equalTo('studentnumber',studentnumber);
+    query1.count().then(function (count) {
+        //检测用户是否存在
+        if (count > 0) {
+            query1.find().then(function (results) {
+                no1 = results[0];
+                no1id = no1.id;
+                var scr = no1.get('score');
+                //检测用户分数是否比数据库记录高
+                if (scr < score){
+                    var todo = AV.Object.createWithoutData('score', no1id);
+                    todo.set('score', score);
+                    todo.save();
+                };
+            }, function (error) {
+            });
+        }
+        else {
+            var Scores = AV.Object.extend("score");
+            var formObject = new Scores();
+            formObject.save({
+                check:1,
+                name:name,
+                studentnumber:studentnumber,
+                score:score,
+            }, {
+                success: function(object) {
+                    alert("success！");
+                }
+            }); 
+        }
+    }, function (error) {
+    });
+
 }
