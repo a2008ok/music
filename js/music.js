@@ -1,4 +1,5 @@
 var score=0;
+var realscore;
 var u = navigator.userAgent;
 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 function game(){
@@ -459,14 +460,14 @@ function game(){
         },
 
         scoreprocess:function(){
-            /*if(scorechangeflag==1){*/
+            if(scorechangeflag==1){
             //擦除
             //dtx.clearRect(150,60,150,50);
             //print
             //dtx.strokeText(score,150,100);
-           /* $('#score').css('font-size',font_size+'px').text(score);
+           $('#score').css('font-size',font_size+'px').text(score);
             }
-            scorechangeflag=0;*/
+            scorechangeflag=0;
             /*if(timeschangeflag==1){
             //擦除
                 dtx.clearRect(150,60,150,50);
@@ -474,10 +475,10 @@ function game(){
                 dtx.strokeText(times,150,100);
             }
             timeschangeflag=0;*/
-           if(timeschangeflag==1){
+          /*if(timeschangeflag==1){
                 $('#score').css('font-size',font_size+'px').text(times/2);
                 timeschangeflag=0;
-            }
+            }*/
         },
 
         buttoninit:function(){
@@ -741,4 +742,47 @@ function game_out(){
     fenshu.innerHTML = score;
     setTimeout('$("#game").fadeOut(100);', 100);
     setTimeout('$("#score1").fadeIn(1000);', 100);  
+
+    //上传分数
+    var ckb;
+    var query1 = new AV.Query('score');
+    query1.equalTo('studentnumber',studentnumber);
+    query1.count().then(function (count) {
+        //检测用户是否存在
+        if (count > 0) {
+            query1.find().then(function (results) {
+                no1 = results[0];
+                no1id = no1.id;
+                var scr = no1.get('score');
+                //检测用户分数是否比数据库记录高
+                if (scr < score){
+                    var todo = AV.Object.createWithoutData('score', no1id);
+                    todo.set('score', score);
+                    todo.save();
+                    realscore = score;
+                }
+                else{
+                    realscore = scr;
+                }
+            }, function (error) {
+            });
+        }
+        else {
+            var Scores = AV.Object.extend("score");
+            var formObject = new Scores();
+            formObject.save({
+                check:1,
+                name:name,
+                studentnumber:studentnumber,
+                score:score,
+            }, {
+                success: function(object) {
+                    alert("success！");
+                }
+            }); 
+            realscore = score;
+        }
+    }, function (error) {
+    });
+
 }
