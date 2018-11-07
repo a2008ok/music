@@ -458,14 +458,14 @@ function game(){
         },
 
         scoreprocess:function(){
-            if(scorechangeflag==1){
+            /*if(scorechangeflag==1){*/
             //擦除
             //dtx.clearRect(150,60,150,50);
             //print
             //dtx.strokeText(score,150,100);
-              $('#score').css('font-size',font_size+'px').text(score);
+           /*   $('#score').css('font-size',font_size+'px').text(score);
             }
-            scorechangeflag=0;
+            scorechangeflag=0;*/
             /*if(timeschangeflag==1){
             //擦除
                 dtx.clearRect(150,60,150,50);
@@ -473,10 +473,10 @@ function game(){
                 dtx.strokeText(times,150,100);
             }
             timeschangeflag=0;*/
-           /* if(timeschangeflag==1){
+           if(timeschangeflag==1){
                 $('#score').css('font-size',font_size+'px').text(times/2);
                 timeschangeflag=0;
-            }*/
+            }
         },
 
         buttoninit:function(){
@@ -659,15 +659,13 @@ function game(){
             Wrapper.move();
             Wrapper.gamecheck();
             //if(times==188){clearInterval(timer);}
-            function myfunction()
-            {
+            audio.addEventListener('ended', function () {  
                 if (listenflag) {
                     clearInterval(timer);
                     game_out();
                     listenflag=0;
                 }
-            }
-            audio.addEventListener('ended', myfunction, false);
+            }, false);
         }
         else{
             if(pause_flag){
@@ -679,7 +677,7 @@ function game(){
 
     },circletimes);
     
-audio.removeEventListener('ended', myfunction);
+
 }
 
 
@@ -697,19 +695,6 @@ function game_out(){
     fenshu.innerHTML = score;
     setTimeout('$("#game").fadeOut(100);', 100);
     setTimeout('$("#score1").fadeIn(1000);', 100);  
-    var Scores = AV.Object.extend("score");
-    var formObject = new Scores();
-    var abc;
-    formObject.save({
-        check:1,
-        name:name,
-        studentnumber:studentnumber,
-        score:score,
-    }, {
-        success: function(object) {
-            alert("success！");
-        }
-    }); 
 }
 
 
