@@ -738,7 +738,7 @@ function game_begin(){
 }
 
 function game_out(){
-    if(score > 465){
+    if(score > 650){
         score = 0;
         alert('分数异常');
     };
